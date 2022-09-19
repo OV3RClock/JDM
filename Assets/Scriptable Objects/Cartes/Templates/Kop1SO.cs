@@ -11,9 +11,13 @@ public class Kop1SO : ScriptableObject
     [SerializeField] private string _cardName;
     public string CardName { get => _cardName; }
 
-    [Tooltip("Description de la carte")]
-    [SerializeField] private string _description;
-    public string Description { get => _description; }
+    [Tooltip("Effet de la carte")]
+    [SerializeField] private string _effect;
+    public string Effect { get => _effect; }
+    
+    [Tooltip("Rarete de la carte")]
+    [SerializeField] private string _rarity;
+    public string Rarity { get => _rarity; }
 
     [Header("Illustration")]
 
@@ -23,17 +27,17 @@ public class Kop1SO : ScriptableObject
 
     [Header("Statistiques")]
 
-    [Tooltip("Cout en mana")]
-    [SerializeField] private int _manaCost;
-    public int ManaCost { get => _manaCost; }
+    [Tooltip("Cout en rubis")]
+    [SerializeField] private int _rubyCost;
+    public int RubyCost { get => _rubyCost; }
 
-    [Tooltip("Points d'attaque")]
-    [SerializeField] private int _att;
-    public int Att { get => _att; }
+    [Tooltip("Street Cred")]
+    [SerializeField] private int _stc;
+    public int Stc { get => _stc; }
 
-    [Tooltip("Points de vie")]
-    [SerializeField] private int _health;
-    public int Health { get => _health; }
+    [Tooltip("Defense")]
+    [SerializeField] private int _def;
+    public int Def { get => _def; }
 
     [Header("Informations autres")]
 
@@ -42,6 +46,6 @@ public class Kop1SO : ScriptableObject
     public string Archetype { get => _archetype; }
 
     [Tooltip("Extension de la carte")]
-    [SerializeField] private string _extension;
-    public string Extension { get => _extension; }
+    [SerializeField] private Sprite _extension;
+    public Sprite Extension { get => _extension; }
 }
