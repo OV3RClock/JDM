@@ -12,8 +12,8 @@ public class PassepasseSO : ScriptableObject
     public string CardName { get => _cardName; }
 
     [Tooltip("Description de la carte")]
-    [SerializeField] private string _description;
-    public string Description { get => _description; }
+    [SerializeField] private string _effect;
+    public string Effect { get => _effect; }
 
     [Header("Illustration")]
 
@@ -23,17 +23,9 @@ public class PassepasseSO : ScriptableObject
 
     [Header("Statistiques")]
 
-    [Tooltip("Cout en mana")]
-    [SerializeField] private int _manaCost;
-    public int ManaCost { get => _manaCost; }
-
-    [Tooltip("Points d'attaque")]
-    [SerializeField] private int _att;
-    public int Att { get => _att; }
-
-    [Tooltip("Points de vie")]
-    [SerializeField] private int _health;
-    public int Health { get => _health; }
+    [Tooltip("Cout en rubis")]
+    [SerializeField] private int _rubyCost;
+    public int RubyCost { get => _rubyCost; }
 
     [Header("Informations autres")]
 
@@ -44,4 +36,8 @@ public class PassepasseSO : ScriptableObject
     [Tooltip("Extension de la carte")]
     [SerializeField] private string _extension;
     public string Extension { get => _extension; }
+
+    [Tooltip("Jeton")]
+    [SerializeField] private bool _jeton;
+    public bool Jeton { get => _jeton; }
 }

@@ -12,8 +12,8 @@ public class FinishHimSO : ScriptableObject
     public string CardName { get => _cardName; }
 
     [Tooltip("Description de la carte")]
-    [SerializeField] private string _description;
-    public string Description { get => _description; }
+    [SerializeField] private string _effect;
+    public string Effect { get => _effect; }
 
     [Header("Illustration")]
 
@@ -28,10 +28,6 @@ public class FinishHimSO : ScriptableObject
     public int RubyCost { get => _rubyCost; }
 
     [Header("Informations autres")]
-
-    [Tooltip("Archetype de la carte")]
-    [SerializeField] private string _archetype;
-    public string Archetype { get => _archetype; }
 
     [Tooltip("Extension de la carte")]
     [SerializeField] private string _extension;

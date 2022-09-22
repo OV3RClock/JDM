@@ -6,13 +6,13 @@ public class FinishHimDisplay : MonoBehaviour
 {
     [SerializeField] private FinishHimSO _finishHim;
 
-    [SerializeField] private TMP_Text _clashText;
+    [SerializeField] private Image _artwork;
+
+    [SerializeField] private TMP_Text _nametext;
 
     [SerializeField] private TMP_Text _rubyText;
 
     [SerializeField] private TMP_Text _effectText;
-
-    [SerializeField] private TMP_Text _achetypeText;
 
 
     //[SerializeField] private Image _extensionText; LOGO
@@ -21,12 +21,12 @@ public class FinishHimDisplay : MonoBehaviour
 
     void Start()
     {
-        //_clashText.text = _finishHim.ClashText;
+        _nametext.text = _finishHim.CardName;
 
+        _artwork.sprite = _finishHim.Artwork;
+        
         _rubyText.text = _finishHim.RubyCost.ToString();
 
-        //_effectText.text = _finishHim.Effect;
-
-        _achetypeText.text = _finishHim.Archetype;
+        _effectText.text = _finishHim.Effect;
     }
 }

@@ -36,8 +36,8 @@ public class Kop1SO : ScriptableObject
     public int Stc { get => _stc; }
 
     [Tooltip("Defense")]
-    [SerializeField] private int _def;
-    public int Def { get => _def; }
+    [SerializeField] private int _res;
+    public int Res { get => _res; }
 
     [Header("Informations autres")]
 
@@ -48,4 +48,8 @@ public class Kop1SO : ScriptableObject
     [Tooltip("Extension de la carte")]
     [SerializeField] private Sprite _extension;
     public Sprite Extension { get => _extension; }
+
+    [Tooltip("Jeton")]
+    [SerializeField] private bool _jeton;
+    public bool Jeton { get => _jeton; }
 }
