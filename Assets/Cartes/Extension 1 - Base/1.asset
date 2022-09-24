@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22f9750aa85748540bad95da8b852214, type: 3}
-  m_Name: 1_GLBSTKF
+  m_Name: 1
   m_EditorClassIdentifier: 
   _cardName: GLBSTKF
   _effect: 
   _rarity: {fileID: 21300000, guid: 7d7ff60fd1eb2ca4db653d0bd2f08681, type: 3}
   _rubyRarity: {fileID: 21300000, guid: 688a913cd72d1ca40bddf2ae1cc23e0d, type: 3}
   _artwork: {fileID: 21300000, guid: 11a41c2b74f5aee46b11c38076710081, type: 3}
+  _sfx: 1_GLBSTKF
   _rubyCost: 2
   _stc: 3
   _res: 0

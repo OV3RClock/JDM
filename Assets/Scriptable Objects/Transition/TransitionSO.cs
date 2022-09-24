@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="TransitionSO")]
+[CreateAssetMenu(menuName ="Others/TransitionSO")]
 public class TransitionSO : ScriptableObject
 {
     private bool _startTransition = false;

@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(menuName = "SceneLoaderSO")]
+[CreateAssetMenu(menuName = "Others/SceneLoaderSO")]
 public class SceneLoaderSO : ScriptableObject
 {
 	[SerializeField] private List<SceneGroup> _sceneGroups;
