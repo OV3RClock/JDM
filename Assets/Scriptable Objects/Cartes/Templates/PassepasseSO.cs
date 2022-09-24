@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Nouveau Passepasse", menuName = "Carte Passepasse")]
+[CreateAssetMenu(fileName = "Nouveau Passepasse", menuName = "Carte/Carte Passepasse")]
 public class PassepasseSO : ScriptableObject
 {
     [Header("Informations generales")]

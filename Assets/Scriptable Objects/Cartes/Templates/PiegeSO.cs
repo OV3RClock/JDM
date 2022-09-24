@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Nouveau Piege", menuName = "Carte Piege")]
+[CreateAssetMenu(fileName = "Nouveau Piege", menuName = "Carte/Carte Piege")]
 public class PiegeSO : ScriptableObject
 {
     [Header("Informations generales")]

@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneBootstrap.unity
     guid: c9af2c3c1dc9119499a91f777dc8c662
   - enabled: 1
+    path: Assets/Scenes/Transition.unity
+    guid: 8bfd601c0c6d30f4ebdb369691e24d60
+  - enabled: 1
     path: Assets/Scenes/Audio.unity
     guid: 6aa4567777e62b24ea93ac229500a4ed
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4ace2466753ccf94e8f68e051ed3e21d
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: 6392910fa9ad40044b9a69f46db6bfe9
+  - enabled: 1
+    path: Assets/Scenes/Camera.unity
+    guid: 82760b50cab5f384e8cb2f03797a621e
   m_configObjects: {}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Nouveau Clash", menuName = "Carte Clash")]
+[CreateAssetMenu(fileName = "Nouveau Clash", menuName = "Carte/Carte Clash")]
 public class ClashSO : ScriptableObject
 {
     [Header("Informations generales")]

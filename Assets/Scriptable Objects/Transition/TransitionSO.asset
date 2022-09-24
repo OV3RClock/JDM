@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5a768a310582b44b74d9e378f5eaec, type: 3}
-  m_Name: SceneLoaderSO
+  m_Script: {fileID: 11500000, guid: 37870d70b1566a04c9c7e5b2715b2b11, type: 3}
+  m_Name: TransitionSO
   m_EditorClassIdentifier: 
-  _sceneGroups:
-  - name: MainMenu
-    scenesToLoad:
-    - Transition
-    - Camera
-    - Audio
-    - MainMenu

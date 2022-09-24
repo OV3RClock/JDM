@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Nouveau FinishHim", menuName = "Carte FinishHim")]
+[CreateAssetMenu(fileName = "Nouveau FinishHim", menuName = "Carte/Carte FinishHim")]
 public class FinishHimSO : ScriptableObject
 {
     [Header("Informations generales")]

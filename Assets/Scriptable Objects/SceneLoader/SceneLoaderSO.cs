@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,20 +8,19 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName = "SceneLoaderSO")]
 public class SceneLoaderSO : ScriptableObject
 {
-	[SerializeField] private List<SceneGroup> sceneGroups;
+	[SerializeField] private List<SceneGroup> _sceneGroups;
 
 	public void LoadSceneGroup(string groupName)
 	{
-		SceneGroup scenes = sceneGroups.Find(sceneGroup => sceneGroup.name == groupName);
-
+		SceneGroup scenes = _sceneGroups.Find(sceneGroup => sceneGroup.name == groupName);
 		LoadScenes(scenes.scenesToLoad);
 	}
 
-	private static async void LoadScenes(ICollection<string> scenes)
+	private static void LoadScenes(ICollection<string> scenes)
 	{
 		int count = 0;
 		List<string> sceneLoaded = GetActiveSceneName();
-
+		
 		foreach (string sceneName in sceneLoaded.Where(sceneName => !scenes.Contains(sceneName)))
 		{
 			SceneManager.UnloadSceneAsync(sceneName);
@@ -48,7 +48,7 @@ public class SceneLoaderSO : ScriptableObject
 
 	public List<SceneGroup> GetSceneGroups()
 	{
-		return sceneGroups;
+		return _sceneGroups;
 	}
 }
 

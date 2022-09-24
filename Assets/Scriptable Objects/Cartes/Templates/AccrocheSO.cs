@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Nouvelle Accroche", menuName = "Carte Accroche")]
+[CreateAssetMenu(fileName = "Nouvelle Accroche", menuName = "Carte/Carte Accroche")]
 public class AccrocheSO : ScriptableObject
 {
     [Header("Informations generales")]
