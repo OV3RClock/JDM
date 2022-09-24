@@ -6,27 +6,30 @@ public class FinishHimDisplay : MonoBehaviour
 {
     [SerializeField] private FinishHimSO _finishHim;
 
-    [SerializeField] private Image _artwork;
+    [SerializeField] private TMP_Text _cardNameText;
+    [SerializeField] private TMP_Text _effectText;
+    [SerializeField] private Image _rarityImage;
+    [SerializeField] private Image _rubyRarityImage;
 
-    [SerializeField] private TMP_Text _nametext;
+    [SerializeField] private Image _artwork;
 
     [SerializeField] private TMP_Text _rubyText;
 
-    [SerializeField] private TMP_Text _effectText;
-
-
-    //[SerializeField] private Image _extensionText; LOGO
-
-    //[SerializeField] private Image _rarity; A VOIR SELON TEMPLATE
+    [SerializeField] private Image _extensionLogo;
 
     void Start()
     {
-        _nametext.text = _finishHim.CardName;
+        if(_finishHim == null) { return; }
+
+        _cardNameText.text = _finishHim.CardName;
+        _effectText.text = _finishHim.Effect;
+        _rarityImage.sprite = _finishHim.Rarity;
+        _rubyRarityImage.sprite = _finishHim.RubyRarity;
 
         _artwork.sprite = _finishHim.Artwork;
         
         _rubyText.text = _finishHim.RubyCost.ToString();
 
-        _effectText.text = _finishHim.Effect;
+        _extensionLogo.sprite = _finishHim.Extension;
     }
 }

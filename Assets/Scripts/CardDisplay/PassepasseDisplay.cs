@@ -6,27 +6,32 @@ public class PassepasseDisplay : MonoBehaviour
 {
     [SerializeField] private PassepasseSO _passepasse;
 
-    [SerializeField] private Image _artwork;
+    [SerializeField] private TMP_Text _cardNameText;
+    [SerializeField] private TMP_Text _effectText;
+    [SerializeField] private Image _rarityImage;
+    [SerializeField] private Image _rubyRarityImage;
 
-    [SerializeField] private TMP_Text _nametext;
+    [SerializeField] private Image _artwork;
 
     [SerializeField] private TMP_Text _rubyText;
 
-    [SerializeField] private TMP_Text _effectText;
-
-
-    //[SerializeField] private Image _extensionText; LOGO
-
-    //[SerializeField] private Image _rarity; A VOIR SELON TEMPLATE
+    [SerializeField] private TMP_Text _archetypeText;
+    [SerializeField] private Image _extensionLogo;
 
     void Start()
     {
-        _nametext.text = _passepasse.CardName;
+        if(_passepasse == null) { return; }
+
+        _cardNameText.text = _passepasse.CardName;
+        _effectText.text = _passepasse.Effect;
+        _rarityImage.sprite = _passepasse.Rarity;
+        _rubyRarityImage.sprite = _passepasse.RubyRarity;
 
         _artwork.sprite = _passepasse.Artwork;
         
         _rubyText.text = _passepasse.RubyCost.ToString();
 
-        _effectText.text = _passepasse.Effect;
+        _archetypeText.text = _passepasse.Archetype;
+        _extensionLogo.sprite = _passepasse.Extension;
     }
 }

@@ -15,9 +15,13 @@ public class AccrocheSO : ScriptableObject
     [SerializeField] private string _effect;
     public string Effect { get => _effect; }
 
-    [Tooltip("Rarete de la carte")]
-    [SerializeField] private string _rarity;
-    public string Rarity { get => _rarity; }
+    [Tooltip("Gemme de rarete")]
+    [SerializeField] private Sprite _rarity;
+    public Sprite Rarity { get => _rarity; }
+
+    [Tooltip("Rubis de rarete")]
+    [SerializeField] private Sprite _rubyRarity;
+    public Sprite RubyRarity { get => _rubyRarity; }
 
     [Header("Illustration")]
 

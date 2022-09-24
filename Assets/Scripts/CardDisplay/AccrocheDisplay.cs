@@ -6,26 +6,30 @@ public class AccrocheDisplay : MonoBehaviour
 {
     [SerializeField] private AccrocheSO _accroche;
 
-    [SerializeField] private Image _image;
-
     [SerializeField] private TMP_Text _cardNameText;
+    [SerializeField] private TMP_Text _effectText;
+    [SerializeField] private Image _rarityImage;
+    [SerializeField] private Image _rubyRarityImage;
+
+    [SerializeField] private Image _artwork;
 
     [SerializeField] private TMP_Text _rubyText;
 
-    [SerializeField] private TMP_Text _effectText;
-
-    //[SerializeField] private Image _extensionText; LOGO
-
-    //[SerializeField] private Image _rarity; A VOIR SELON TEMPLATE
+    [SerializeField] private Image _extensionLogo;
 
     void Start()
     {
-        _image.sprite = _accroche.Artwork;
+        if(_accroche == null) { return; }
 
         _cardNameText.text = _accroche.CardName;
+        _effectText.text = _accroche.Effect;
+        _rarityImage.sprite = _accroche.Rarity;
+        _rubyRarityImage.sprite = _accroche.RubyRarity;
+
+        _artwork.sprite = _accroche.Artwork;
 
         _rubyText.text = _accroche.RubyCost.ToString();
 
-        _effectText.text = _accroche.Effect;
+        _extensionLogo.sprite = _accroche.Extension;
     }
 }
