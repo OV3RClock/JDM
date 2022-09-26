@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Nouveau Personnage", menuName = "Carte/Carte Personnage")]
-public class PersonnageSO : ScriptableObject
+public class PersonnageSO : CardSO
 {
     [Header("Informations generales")]
 

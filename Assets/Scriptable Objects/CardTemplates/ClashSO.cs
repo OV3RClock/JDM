@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Nouveau Clash", menuName = "Carte/Carte Clash")]
-public class ClashSO : ScriptableObject
+public class ClashSO : CardSO
 {
     [Header("Informations generales")]
 

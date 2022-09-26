@@ -12,10 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50344d9fd94ed904991a230bcc1508af, type: 3}
   m_Name: AudioSO
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: paper
+    clip: {fileID: 8300000, guid: e7212000bbe129144a89f9b1378913f5, type: 3}
+    volume: 0.6
+    loop: 0
+    source: {fileID: 0}
+  - name: spray
+    clip: {fileID: 8300000, guid: 2ebfe539a8114ce40a0809fc41d310e1, type: 3}
+    volume: 0.3
+    loop: 0
+    source: {fileID: 0}
+  - name: city
+    clip: {fileID: 8300000, guid: 79257958d17be064583030f1879f03fb, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
   _currentSound:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
+    name: paper
+    clip: {fileID: 8300000, guid: e7212000bbe129144a89f9b1378913f5, type: 3}
+    volume: 0.6
     loop: 0
     source: {fileID: 0}

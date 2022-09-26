@@ -19,3 +19,9 @@ MonoBehaviour:
     - Camera
     - Audio
     - MainMenu
+  - name: OptionsMenu
+    scenesToLoad:
+    - Transition
+    - Camera
+    - Audio
+    - OptionsMenu

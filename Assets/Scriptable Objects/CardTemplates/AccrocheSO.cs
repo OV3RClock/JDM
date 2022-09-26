@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Nouvelle Accroche", menuName = "Carte/Carte Accroche")]
-public class AccrocheSO : ScriptableObject
+public class AccrocheSO : CardSO
 {
     [Header("Informations generales")]
 

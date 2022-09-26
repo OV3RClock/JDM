@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Nouveau Piege", menuName = "Carte/Carte Piege")]
-public class PiegeSO : ScriptableObject
+public class PiegeSO : CardSO
 {
     [Header("Informations generales")]
 

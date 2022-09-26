@@ -18,4 +18,4 @@ MonoBehaviour:
   _rubyRarity: {fileID: 21300000, guid: 688a913cd72d1ca40bddf2ae1cc23e0d, type: 3}
   _artwork: {fileID: 21300000, guid: ba66a69402a66d8409658542f2d7e32a, type: 3}
   _rubyCost: 1
-  _extension: {fileID: 21300000, guid: 831a95afac5a9bc4dbff1694c18edc81, type: 3}
+  _extension: {fileID: 21300000, guid: 715148c729e2a9e469e37fa275617bfb, type: 3}
