@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PersonnageDisplay : MonoBehaviour
 {
-    [SerializeField] private PersonnageSO _personnage;
+    [SerializeField] public PersonnageSO _personnage;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;

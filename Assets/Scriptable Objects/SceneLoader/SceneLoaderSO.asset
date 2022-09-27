@@ -16,12 +16,30 @@ MonoBehaviour:
   - name: MainMenu
     scenesToLoad:
     - Transition
-    - Camera
     - Audio
+    - Camera
     - MainMenu
   - name: OptionsMenu
     scenesToLoad:
     - Transition
-    - Camera
     - Audio
+    - Camera
     - OptionsMenu
+  - name: ShopMenu
+    scenesToLoad:
+    - Transition
+    - Audio
+    - Camera
+    - ShopMenu
+  - name: AppleJuiceMenu
+    scenesToLoad:
+    - Transition
+    - Audio
+    - Camera
+    - AppleJuiceMenu
+  - name: PlayMenu
+    scenesToLoad:
+    - Transition
+    - Audio
+    - Camera
+    - PlayMenu

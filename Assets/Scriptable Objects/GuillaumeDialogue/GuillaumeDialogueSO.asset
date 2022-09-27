@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b22af7d38628040ae2d82d0fdd259b, type: 3}
+  m_Name: GuillaumeDialogueSO
+  m_EditorClassIdentifier: 
+  _dialogues:
+  - "Bon jus de pomme sa m\xE8re"
+  - "H\xE9 ! Viens par ici toi !"
+  - Gnihahaha... Quoi ? Nan rien...
+  - Jus de pomme pas cher !
+  - "H\xE9 toi ! Tu veux voir... mes jus de pomme ?"
+  - '*eik* ... Victoire ... Italie'
+  - '*Sluuuuuurp*'
+  - '*Burp*'
+  - RUPTURE !
+  - "...soir\xE9e p\xE9t\xE9e... bon jus de pomme sa m\xE8re..."
+  - "Le b\xE9nef... Beaucoup de b\xE9nef..."
+  - L'Archimage est un dragon... ?
+  - Hello adventurer ! ... Heu ... hein ?
+  - "On est l\xE0, t'as vu, t'as capt\xE9 ?"

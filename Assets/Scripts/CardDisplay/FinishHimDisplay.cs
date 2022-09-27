@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class FinishHimDisplay : MonoBehaviour
 {
-    [SerializeField] private FinishHimSO _finishHim;
+    [SerializeField] public FinishHimSO _finishHim;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;

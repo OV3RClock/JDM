@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PiegeDisplay : MonoBehaviour
 {
-    [SerializeField] private PiegeSO _piege;
+    [SerializeField] public PiegeSO _piege;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;

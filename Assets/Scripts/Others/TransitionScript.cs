@@ -26,7 +26,7 @@ public class TransitionScript : MonoBehaviour
     private IEnumerator Transition()
     {
         _animator.SetTrigger("Start");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         _sceneLoaderSO.LoadSceneGroup(_transitionSO.SceneGroupToLoad);
     }
 }

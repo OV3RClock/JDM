@@ -13,24 +13,38 @@ MonoBehaviour:
   m_Name: AudioSO
   m_EditorClassIdentifier: 
   sounds:
-  - name: paper
-    clip: {fileID: 8300000, guid: e7212000bbe129144a89f9b1378913f5, type: 3}
-    volume: 0.6
+  - name: city
+    clip: {fileID: 8300000, guid: 79257958d17be064583030f1879f03fb, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
+  - name: downTheRoad
+    clip: {fileID: 8300000, guid: 700c53ba061a03c4c877cfcc62171f44, type: 3}
+    volume: 0.3
     loop: 0
+    source: {fileID: 0}
+  - name: guillaume
+    clip: {fileID: 8300000, guid: 6b3027df6a30cbd45a7cfb3df754e588, type: 3}
+    volume: 0.3
+    loop: 1
+    source: {fileID: 0}
+  - name: market
+    clip: {fileID: 8300000, guid: dd31bc69287c38e468f228a77cba7030, type: 3}
+    volume: 0.2
+    loop: 1
     source: {fileID: 0}
   - name: spray
     clip: {fileID: 8300000, guid: 2ebfe539a8114ce40a0809fc41d310e1, type: 3}
     volume: 0.3
     loop: 0
     source: {fileID: 0}
-  - name: city
-    clip: {fileID: 8300000, guid: 79257958d17be064583030f1879f03fb, type: 3}
-    volume: 0.2
-    loop: 1
-    source: {fileID: 0}
-  _currentSound:
-    name: paper
+  - name: paper
     clip: {fileID: 8300000, guid: e7212000bbe129144a89f9b1378913f5, type: 3}
     volume: 0.6
+    loop: 0
+    source: {fileID: 0}
+  - name: bonk
+    clip: {fileID: 8300000, guid: 94ad493b6ef5bbe428448cdadeb45cc7, type: 3}
+    volume: 0.2
     loop: 0
     source: {fileID: 0}

@@ -16,4 +16,9 @@ public class TransitionSO : ScriptableObject
         _startTransition = true;
         _sceneGroupToLoad = groupName;
     }
+
+    public void CloseApplication()
+    {
+        Application.Quit();
+    }
 }

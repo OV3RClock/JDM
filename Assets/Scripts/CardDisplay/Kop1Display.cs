@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Kop1Display : MonoBehaviour
 {
-    [SerializeField] private Kop1SO _kop1;
+    [SerializeField] public Kop1SO _kop1;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;

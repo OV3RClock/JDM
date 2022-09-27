@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ClashDisplay : MonoBehaviour
 {
-    [SerializeField] private ClashSO _clash;
+    [SerializeField] public ClashSO _clash;
 
     [SerializeField] private TMP_Text _clashText;
     [SerializeField] private TMP_Text _effectText;

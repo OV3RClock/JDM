@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PassepasseDisplay : MonoBehaviour
 {
-    [SerializeField] private PassepasseSO _passepasse;
+    [SerializeField] public PassepasseSO _passepasse;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;

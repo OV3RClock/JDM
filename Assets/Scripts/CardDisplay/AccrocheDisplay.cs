@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class AccrocheDisplay : MonoBehaviour
 {
-    [SerializeField] private AccrocheSO _accroche;
+    [SerializeField] public AccrocheSO _accroche;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;

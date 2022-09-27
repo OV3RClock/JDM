@@ -7,39 +7,35 @@ using UnityEngine.UI;
 
 public class MainMenuPapers : MonoBehaviour
 {
-    [SerializeField] private AudioSO _audio;
     [SerializeField] private Image _artwork;
     [SerializeField] private TMP_Text _text;
-    [SerializeField] private Kop1SO[] _kop1s;
-    [SerializeField] private string[] _descriptions;
-    private int index = 0;
+    [SerializeField] private MenuPapersSO _data;
     private bool refresh = false;
 
     void Start()
     {
-        _audio.Play("city");
+        int rand = UnityEngine.Random.Range(0, _data.Kop1s.Length);
+        _artwork.sprite = _data.Kop1s[rand].Artwork;
 
-        _artwork.sprite = _kop1s[index].Artwork;
-
-        int rand = UnityEngine.Random.Range(0, _descriptions.Length);
-        _text.text = _descriptions[rand];
+        rand = UnityEngine.Random.Range(0, _data.Descriptions.Length);
+        _text.text = _data.Descriptions[rand];
     }
 
     void Update()
     {
         if(!refresh) { return; }
 
-        _artwork.sprite = _kop1s[index].Artwork;
+        int rand = UnityEngine.Random.Range(0, _data.Kop1s.Length);
+        _artwork.sprite = _data.Kop1s[rand].Artwork;
 
-        int rand = UnityEngine.Random.Range(0, _descriptions.Length);
-        _text.text = _descriptions[rand];
+        rand = UnityEngine.Random.Range(0, _data.Descriptions.Length);
+        _text.text = _data.Descriptions[rand];
 
         refresh = false;
     }
 
     public void NextPaper()
     {
-        index++;
-        if(index >= _kop1s.Length) { index = 0; refresh = true; }
+        refresh = true;
     }
 }

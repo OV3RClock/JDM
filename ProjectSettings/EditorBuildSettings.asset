@@ -6,21 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SceneBootstrap.unity
+    path: Assets/Scenes/Base/SceneBootstrap.unity
     guid: c9af2c3c1dc9119499a91f777dc8c662
   - enabled: 1
-    path: Assets/Scenes/Transition.unity
+    path: Assets/Scenes/Base/Transition.unity
     guid: 8bfd601c0c6d30f4ebdb369691e24d60
   - enabled: 1
-    path: Assets/Scenes/Audio.unity
+    path: Assets/Scenes/Base/Audio.unity
     guid: 6aa4567777e62b24ea93ac229500a4ed
   - enabled: 1
-    path: Assets/Scenes/Camera.unity
+    path: Assets/Scenes/Base/Camera.unity
     guid: 82760b50cab5f384e8cb2f03797a621e
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: 4ace2466753ccf94e8f68e051ed3e21d
   - enabled: 1
-    path: Assets/Scenes/OptionsMenu.unity
+    path: Assets/Scenes/Menus/OptionsMenu.unity
     guid: 3b778536d59faa8408d70102095347d2
+  - enabled: 1
+    path: Assets/Scenes/Menus/AppleJuiceMenu.unity
+    guid: 4dd580c0ce24c7c41a2cb03d092c5ea6
+  - enabled: 1
+    path: Assets/Scenes/Menus/CardsMenu.unity
+    guid: 0c39c99542ac4ba47a49bfb31b62cb76
+  - enabled: 1
+    path: Assets/Scenes/Menus/PlayMenu.unity
+    guid: 86c2bdd86249e9647b4c5080eada0eb7
+  - enabled: 1
+    path: Assets/Scenes/Menus/ShopMenu.unity
+    guid: c0952a2b15a9c9c4ab29e02b205239db
   m_configObjects: {}
