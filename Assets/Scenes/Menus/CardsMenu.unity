@@ -283,12 +283,12 @@ PrefabInstance:
     - target: {fileID: 2647388221476822697, guid: 4cc07906139e0bd45a71b9e33a01936a,
         type: 3}
       propertyPath: _soundsToPlay.Array.data[0]
-      value: city
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2647388221476822697, guid: 4cc07906139e0bd45a71b9e33a01936a,
         type: 3}
       propertyPath: _soundsToPlay.Array.data[1]
-      value: downTheRoad
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2647388221476822700, guid: 4cc07906139e0bd45a71b9e33a01936a,
         type: 3}
