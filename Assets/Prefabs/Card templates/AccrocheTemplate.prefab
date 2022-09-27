@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dfb8bd3368ddf4bbe2bc1bd7055270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _accroche: {fileID: 0}
+  Data: {fileID: 0}
   _cardNameText: {fileID: 5024310850105699811}
   _effectText: {fileID: 5024310851511408065}
   _rarityImage: {fileID: 1612256328192194114}

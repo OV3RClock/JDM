@@ -2,9 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class FinishHimDisplay : MonoBehaviour
+public class FinishHimDisplay : CardDisplay
 {
-    [SerializeField] public FinishHimSO _finishHim;
+    public override object Data { set => _data = (FinishHimSO)value; }
+    private FinishHimSO _data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -19,17 +20,17 @@ public class FinishHimDisplay : MonoBehaviour
 
     void Start()
     {
-        if(_finishHim == null) { return; }
+        if(_data == null) { return; }
 
-        _cardNameText.text = _finishHim.CardName;
-        _effectText.text = _finishHim.Effect;
-        _rarityImage.sprite = _finishHim.Rarity;
-        _rubyRarityImage.sprite = _finishHim.RubyRarity;
+        _cardNameText.text = _data.CardName;
+        _effectText.text = _data.Effect;
+        _rarityImage.sprite = _data.Rarity;
+        _rubyRarityImage.sprite = _data.RubyRarity;
 
-        _artwork.sprite = _finishHim.Artwork;
+        _artwork.sprite = _data.Artwork;
         
-        _rubyText.text = _finishHim.RubyCost.ToString();
+        _rubyText.text = _data.RubyCost.ToString();
 
-        _extensionLogo.sprite = _finishHim.Extension;
+        _extensionLogo.sprite = _data.Extension;
     }
 }

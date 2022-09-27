@@ -721,12 +721,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 40825908}
         m_TargetAssemblyTypeName: BuyCardZone, Assembly-CSharp
-        m_MethodName: RemButton
+        m_MethodName: Button
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1562,18 +1562,18 @@ MonoBehaviour:
   - {fileID: 1578288724}
   - {fileID: 1010972400}
   _pages:
-  - _button: {fileID: 1959907187}
-    _extension: {fileID: 11400000, guid: 26181358404cc214cad9a67580cece8a, type: 2}
-    _cards:
+  - Button: {fileID: 1959907187}
+    Extension: {fileID: 11400000, guid: 26181358404cc214cad9a67580cece8a, type: 2}
+    Cards:
     - {fileID: 11400000, guid: a9ff7482d87729e48903f92b8569d993, type: 2}
     - {fileID: 11400000, guid: 7edc38ed095ed454d8203dbf78538e81, type: 2}
     - {fileID: 11400000, guid: 08845ed7a4a88664d9324da1362358ca, type: 2}
-  - _button: {fileID: 1993895322}
-    _extension: {fileID: 11400000, guid: 834887cf8f61ea44b8b89a78e2c385cb, type: 2}
-    _cards:
+  - Button: {fileID: 1993895322}
+    Extension: {fileID: 11400000, guid: 834887cf8f61ea44b8b89a78e2c385cb, type: 2}
+    Cards:
+    - {fileID: 11400000, guid: 7edc38ed095ed454d8203dbf78538e81, type: 2}
     - {fileID: 11400000, guid: 08845ed7a4a88664d9324da1362358ca, type: 2}
     - {fileID: 11400000, guid: a9ff7482d87729e48903f92b8569d993, type: 2}
-    - {fileID: 11400000, guid: 7edc38ed095ed454d8203dbf78538e81, type: 2}
   _index: 0
 --- !u!1 &968281210
 GameObject:

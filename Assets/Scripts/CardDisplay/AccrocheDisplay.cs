@@ -2,9 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class AccrocheDisplay : MonoBehaviour
+public class AccrocheDisplay : CardDisplay
 {
-    [SerializeField] public AccrocheSO _accroche;
+    public override object Data { set => _data = (AccrocheSO)value; }
+    private AccrocheSO _data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -17,19 +18,21 @@ public class AccrocheDisplay : MonoBehaviour
 
     [SerializeField] private Image _extensionLogo;
 
+
+
     void Start()
     {
-        if(_accroche == null) { return; }
+        if(_data == null) { return; }
 
-        _cardNameText.text = _accroche.CardName;
-        _effectText.text = _accroche.Effect;
-        _rarityImage.sprite = _accroche.Rarity;
-        _rubyRarityImage.sprite = _accroche.RubyRarity;
+        _cardNameText.text = _data.CardName;
+        _effectText.text = _data.Effect;
+        _rarityImage.sprite = _data.Rarity;
+        _rubyRarityImage.sprite = _data.RubyRarity;
 
-        _artwork.sprite = _accroche.Artwork;
+        _artwork.sprite = _data.Artwork;
 
-        _rubyText.text = _accroche.RubyCost.ToString();
+        _rubyText.text = _data.RubyCost.ToString();
 
-        _extensionLogo.sprite = _accroche.Extension;
+        _extensionLogo.sprite = _data.Extension;
     }
 }

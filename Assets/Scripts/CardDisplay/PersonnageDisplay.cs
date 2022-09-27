@@ -2,9 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class PersonnageDisplay : MonoBehaviour
+public class PersonnageDisplay : CardDisplay
 {
-    [SerializeField] public PersonnageSO _personnage;
+    public override object Data { set => _data = (PersonnageSO)value; }
+    private PersonnageSO _data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -20,18 +21,18 @@ public class PersonnageDisplay : MonoBehaviour
 
     void Start()
     {
-        if(_personnage == null) { return; }
+        if(_data == null) { return; }
 
-        _cardNameText.text = _personnage.CardName;
-        _effectText.text = _personnage.Effect;
-        _rarityImage.sprite = _personnage.Rarity;
-        _rubyRarityImage.sprite = _personnage.RubyRarity;
+        _cardNameText.text = _data.CardName;
+        _effectText.text = _data.Effect;
+        _rarityImage.sprite = _data.Rarity;
+        _rubyRarityImage.sprite = _data.RubyRarity;
 
-        _artwork.sprite = _personnage.Artwork;
+        _artwork.sprite = _data.Artwork;
 
-        _rubyText.text = _personnage.RubyCost.ToString();
+        _rubyText.text = _data.RubyCost.ToString();
         //_spellRubyCostText.text = _personnage.SpellRubyCost.ToString();
 
-        _extensionLogo.sprite = _personnage.Extension;
+        _extensionLogo.sprite = _data.Extension;
     }
 }

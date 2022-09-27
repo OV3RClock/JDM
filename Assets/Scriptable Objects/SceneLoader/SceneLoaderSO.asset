@@ -15,6 +15,7 @@ MonoBehaviour:
   _sceneGroups:
   - name: MainMenu
     scenesToLoad:
+    - SceneBootstrap
     - Transition
     - Audio
     - Camera

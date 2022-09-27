@@ -17,7 +17,7 @@ public class BuyCardZone : MonoBehaviour
     private void Start()
     {
         _amountText.text = _amount.ToString();
-        _costText.text = (_amount * _cardShop._pages[_cardShop._index]._extension.PackCost).ToString();
+        _costText.text = (_amount * _cardShop._pages[_cardShop._index].Extension.PackCost).ToString();
     }
 
     private void Update()
@@ -25,19 +25,13 @@ public class BuyCardZone : MonoBehaviour
         if (!_refresh) { return; }
 
         _amountText.text = _amount.ToString();
-        _costText.text = (_amount * _cardShop._pages[_cardShop._index]._extension.PackCost).ToString();
+        _costText.text = (_amount * _cardShop._pages[_cardShop._index].Extension.PackCost).ToString();
     }
 
-    public void AddButton(int _int)
+    public void Button(int _int)
     {
         _amount += _int;
         if(_amount > 10) { _amount = 10; return; }
-        _refresh = true;
-    }
-
-    public void RemButton(int _int)
-    {
-        _amount -= _int;
         if (_amount < 1) { _amount = 1; return; }
         _refresh = true;
     }

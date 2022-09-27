@@ -2,9 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class PassepasseDisplay : MonoBehaviour
+public class PassepasseDisplay : CardDisplay
 {
-    [SerializeField] public PassepasseSO _passepasse;
+    public override object Data { set => _data = (PassepasseSO)value; }
+    private PassepasseSO _data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -20,18 +21,18 @@ public class PassepasseDisplay : MonoBehaviour
 
     void Start()
     {
-        if(_passepasse == null) { return; }
+        if(_data == null) { return; }
 
-        _cardNameText.text = _passepasse.CardName;
-        _effectText.text = _passepasse.Effect;
-        _rarityImage.sprite = _passepasse.Rarity;
-        _rubyRarityImage.sprite = _passepasse.RubyRarity;
+        _cardNameText.text = _data.CardName;
+        _effectText.text = _data.Effect;
+        _rarityImage.sprite = _data.Rarity;
+        _rubyRarityImage.sprite = _data.RubyRarity;
 
-        _artwork.sprite = _passepasse.Artwork;
+        _artwork.sprite = _data.Artwork;
         
-        _rubyText.text = _passepasse.RubyCost.ToString();
+        _rubyText.text = _data.RubyCost.ToString();
 
-        _archetypeText.text = _passepasse.Archetype;
-        _extensionLogo.sprite = _passepasse.Extension;
+        _archetypeText.text = _data.Archetype;
+        _extensionLogo.sprite = _data.Extension;
     }
 }

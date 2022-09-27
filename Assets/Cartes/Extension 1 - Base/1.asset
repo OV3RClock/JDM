@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f9750aa85748540bad95da8b852214, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
+  _cardPrefab: {fileID: 5024310851297695992, guid: 6312005703bb4564585368bd3eb16d6b,
+    type: 3}
   _cardName: GLBSTKF
   _effect: 
   _rarity: {fileID: 21300000, guid: 7d7ff60fd1eb2ca4db653d0bd2f08681, type: 3}

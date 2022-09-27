@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class CardSO : ScriptableObject
 {
-
+    [Tooltip("Prefab")]
+    [SerializeField] private GameObject _cardPrefab;
+    public GameObject CardPrefab { get => _cardPrefab; }
 }

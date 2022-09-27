@@ -2,9 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Kop1Display : MonoBehaviour
+public class Kop1Display : CardDisplay
 {
-    [SerializeField] public Kop1SO _kop1;
+    public override object Data { set => _data = (Kop1SO)value; }
+    private Kop1SO _data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -22,20 +23,20 @@ public class Kop1Display : MonoBehaviour
 
     void Start()
     {
-        if(_kop1 == null) { return; }
+        if(_data == null) { return; }
 
-        _cardNameText.text = _kop1.CardName;
-        _effectText.text = _kop1.Effect;
-        _rarityImage.sprite = _kop1.Rarity;
-        _rubyRarityImage.sprite = _kop1.RubyRarity;
+        _cardNameText.text = _data.CardName;
+        _effectText.text = _data.Effect;
+        _rarityImage.sprite = _data.Rarity;
+        _rubyRarityImage.sprite = _data.RubyRarity;
 
-        _artwork.sprite = _kop1.Artwork;
+        _artwork.sprite = _data.Artwork;
 
-        _rubyText.text = _kop1.RubyCost.ToString();
-        _stcText.text = _kop1.Stc.ToString();
-        _resText.text = _kop1.Res.ToString();
+        _rubyText.text = _data.RubyCost.ToString();
+        _stcText.text = _data.Stc.ToString();
+        _resText.text = _data.Res.ToString();
 
-        _archetypeText.text = _kop1.Archetype;
-        _extensionLogo.sprite = _kop1.Extension;
+        _archetypeText.text = _data.Archetype;
+        _extensionLogo.sprite = _data.Extension;
     }
 }

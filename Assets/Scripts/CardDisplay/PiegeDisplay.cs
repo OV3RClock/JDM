@@ -2,9 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class PiegeDisplay : MonoBehaviour
+public class PiegeDisplay : CardDisplay
 {
-    [SerializeField] public PiegeSO _piege;
+    public override object Data { set => _data = (PiegeSO)value; }
+    private PiegeSO _data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -19,17 +20,17 @@ public class PiegeDisplay : MonoBehaviour
 
     void Start()
     {
-        if(_piege == null) { return; }
+        if(_data == null) { return; }
 
-        _cardNameText.text = _piege.CardName;
-        _effectText.text = _piege.Effect;
-        _rarityImage.sprite = _piege.Rarity;
-        _rubyRarityImage.sprite = _piege.RubyRarity;
+        _cardNameText.text = _data.CardName;
+        _effectText.text = _data.Effect;
+        _rarityImage.sprite = _data.Rarity;
+        _rubyRarityImage.sprite = _data.RubyRarity;
 
-        _artwork.sprite = _piege.Artwork;
+        _artwork.sprite = _data.Artwork;
 
-        _rubyText.text = _piege.RubyCost.ToString();
+        _rubyText.text = _data.RubyCost.ToString();
 
-        _extensionLogo.sprite = _piege.Extension;
+        _extensionLogo.sprite = _data.Extension;
     }
 }

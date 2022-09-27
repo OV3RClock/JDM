@@ -2,9 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class ClashDisplay : MonoBehaviour
+public class ClashDisplay : CardDisplay
 {
-    [SerializeField] public ClashSO _clash;
+    public override object Data { set => _data = (ClashSO)value; }
+    private ClashSO _data;
 
     [SerializeField] private TMP_Text _clashText;
     [SerializeField] private TMP_Text _effectText;
@@ -18,14 +19,14 @@ public class ClashDisplay : MonoBehaviour
 
     void Start()
     {
-        if(_clash == null) { return; }
+        if(_data == null) { return; }
 
-        _clashText.text = _clash.ClashText;
-        _effectText.text = _clash.Effect;
+        _clashText.text = _data.ClashText;
+        _effectText.text = _data.Effect;
 
-        _rubyText.text = _clash.RubyCost.ToString();
+        _rubyText.text = _data.RubyCost.ToString();
 
-        _achetypeText.text = _clash.Archetype;
-        _extensionLogo.sprite = _clash.Extension;
+        _achetypeText.text = _data.Archetype;
+        _extensionLogo.sprite = _data.Extension;
     }
 }

@@ -44,4 +44,5 @@ public class ClashSO : CardSO
     [Tooltip("Extension de la carte")]
     [SerializeField] private Sprite _extension;
     public Sprite Extension { get => _extension; }
+
 }

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5cd78845128084d96df0181038bc36, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
+  _cardPrefab: {fileID: 5024310851297695992, guid: c035dce07fbf45a4c8d826a0ba0f7c06,
+    type: 3}
   _cardName: Je suis vraiment ravi de vous rencontrer
   _effect: Invoque un canard en plastique
   _rarity: {fileID: 21300000, guid: c45932c33501ea140a854306f97b4fd3, type: 3}
