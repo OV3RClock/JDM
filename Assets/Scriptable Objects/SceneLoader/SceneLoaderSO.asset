@@ -44,3 +44,9 @@ MonoBehaviour:
     - Audio
     - Camera
     - PlayMenu
+  - name: CardsMenu
+    scenesToLoad:
+    - Transition
+    - Audio
+    - Camera
+    - CardsMenu
