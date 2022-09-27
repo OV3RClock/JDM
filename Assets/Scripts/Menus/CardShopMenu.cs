@@ -5,22 +5,21 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopMenu : MonoBehaviour
+public class CardShopMenu : MonoBehaviour
 {
     [SerializeField] private TMP_Text _extensionText;
-    [SerializeField] private TMP_Text _costText;
 
     [SerializeField] private CardPrefabsSO _prefabs;
     [SerializeField] private float _scale;
 
     [SerializeField] private Transform[] _cardSpawnPoints;
 
-    [SerializeField] private ShopPage[] _pages;
+    [SerializeField] public ShopPage[] _pages;
 
     private GameObject[] _currentCards = new GameObject[3];
 
+    [HideInInspector] public int _index = 0;
     private bool _refresh = false;
-    private int _index = 0;
 
     private void Start()
     {
@@ -32,7 +31,6 @@ public class ShopMenu : MonoBehaviour
 
         //Charger le premier nom d'extension
         _extensionText.text = _pages[0]._extension.ExtensionName;
-        _costText.text = _pages[0]._extension.PackCost.ToString();
 
         //Charger les 3 cartes
         for (int i = 0; i < _pages[0]._cards.Length; i++)
@@ -87,7 +85,6 @@ public class ShopMenu : MonoBehaviour
 
         //Mettre a jour le nom de l'extension
         _extensionText.text = _pages[_index]._extension.ExtensionName;
-        _costText.text = _pages[_index]._extension.PackCost.ToString();
 
         //Mettre a jour les 3 cartes
         for (int i = 0; i < _pages[_index]._cards.Length; i++)
