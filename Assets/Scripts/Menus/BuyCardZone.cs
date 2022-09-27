@@ -11,7 +11,7 @@ public class BuyCardZone : MonoBehaviour
     [SerializeField] private TMP_Text _costText;
     [SerializeField] private Button _buyButton;
 
-    public int _amount = 1;
+    private int _amount = 1;
     private bool _refresh = false;
 
     private void Start()

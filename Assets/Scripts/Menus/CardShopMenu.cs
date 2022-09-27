@@ -9,7 +9,6 @@ public class CardShopMenu : MonoBehaviour
 {
     [SerializeField] private TMP_Text _extensionText;
 
-    [SerializeField] private CardPrefabsSO _prefabs;
     [SerializeField] private float _scale;
 
     [SerializeField] private Transform[] _cardSpawnPoints;
