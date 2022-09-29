@@ -866,11 +866,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: bb32b6e7-f08a-457e-9f82-dea8d5b890b0
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: JDM
+  organizationId: overclock21648
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
