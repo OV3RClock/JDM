@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class Kop1Display : CardDisplay
 {
-    public override object Data { set => _data = (Kop1SO)value; }
-    private Kop1SO _data;
+    public Kop1SO Data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -23,20 +22,20 @@ public class Kop1Display : CardDisplay
 
     void Start()
     {
-        if(_data == null) { return; }
+        if(Data == null) { return; }
 
-        _cardNameText.text = _data.CardName;
-        _effectText.text = _data.Effect;
-        _rarityImage.sprite = _data.Rarity;
-        _rubyRarityImage.sprite = _data.RubyRarity;
+        _cardNameText.text = Data.CardName;
+        _effectText.text = Data.Effect;
+        _rarityImage.sprite = Data.Rarity;
+        _rubyRarityImage.sprite = Data.RubyRarity;
 
-        _artwork.sprite = _data.Artwork;
+        _artwork.sprite = Data.Artwork;
 
-        _rubyText.text = _data.RubyCost.ToString();
-        _stcText.text = _data.Stc.ToString();
-        _resText.text = _data.Res.ToString();
+        _rubyText.text = Data.RubyCost.ToString();
+        _stcText.text = Data.Stc.ToString();
+        _resText.text = Data.Res.ToString();
 
-        _archetypeText.text = _data.Archetype;
-        _extensionLogo.sprite = _data.Extension;
+        _archetypeText.text = Data.Archetype;
+        _extensionLogo.sprite = Data.Extension;
     }
 }

@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class ClashDisplay : CardDisplay
 {
-    public override object Data { set => _data = (ClashSO)value; }
-    private ClashSO _data;
+    public ClashSO Data;
 
     [SerializeField] private TMP_Text _clashText;
     [SerializeField] private TMP_Text _effectText;
@@ -19,14 +18,14 @@ public class ClashDisplay : CardDisplay
 
     void Start()
     {
-        if(_data == null) { return; }
+        if(Data == null) { return; }
 
-        _clashText.text = _data.ClashText;
-        _effectText.text = _data.Effect;
+        _clashText.text = Data.ClashText;
+        _effectText.text = Data.Effect;
 
-        _rubyText.text = _data.RubyCost.ToString();
+        _rubyText.text = Data.RubyCost.ToString();
 
-        _achetypeText.text = _data.Archetype;
-        _extensionLogo.sprite = _data.Extension;
+        _achetypeText.text = Data.Archetype;
+        _extensionLogo.sprite = Data.Extension;
     }
 }

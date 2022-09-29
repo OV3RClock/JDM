@@ -62,4 +62,12 @@ public class Kop1SO : CardSO
     [Tooltip("Jeton")]
     [SerializeField] private bool _jeton;
     public bool Jeton { get => _jeton; }
+
+    public override GameObject SpawnCard(Transform spawnPoint, float scale)
+    {
+        GameObject _tmpGameObj = Instantiate(this.CardPrefab, spawnPoint);
+        _tmpGameObj.GetComponent<Kop1Display>().Data = this;
+        _tmpGameObj.transform.localScale = new Vector3(scale, scale, scale);
+        return _tmpGameObj;
+    }
 }

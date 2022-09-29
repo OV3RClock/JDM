@@ -50,4 +50,12 @@ public class PersonnageSO : CardSO
     [Tooltip("Extension de la carte")]
     [SerializeField] private Sprite _extension;
     public Sprite Extension { get => _extension; }
+
+    public override GameObject SpawnCard(Transform spawnPoint, float scale)
+    {
+        GameObject _tmpGameObj = Instantiate(this.CardPrefab, spawnPoint);
+        _tmpGameObj.GetComponent<PersonnageDisplay>().Data = this;
+        _tmpGameObj.transform.localScale = new Vector3(scale, scale, scale);
+        return _tmpGameObj;
+    }
 }

@@ -28,16 +28,7 @@ public class CardShopMenu : MonoBehaviour
             page.Button.GetComponent<Image>().sprite = page.Extension.ExtensionIcon;
         }
 
-        //Charger le premier nom d'extension
-        _extensionText.text = _pages[0].Extension.ExtensionName;
-
-        //Charger les 3 cartes
-        for (int i = 0; i < _pages[0].Cards.Length; i++)
-        {
-            _currentCards[i] = Instantiate(_pages[0].Cards[i].CardPrefab, _cardSpawnPoints[i]);
-            _currentCards[i].GetComponent<CardDisplay>().Data = _pages[0].Cards[i];
-            _currentCards[i].transform.localScale = new Vector3(_scale, _scale, _scale);
-        }
+        _refresh = true;
     }
 
     private void Update()
@@ -52,9 +43,7 @@ public class CardShopMenu : MonoBehaviour
         {
             if(_currentCards.Length != 0) { Destroy(_currentCards[i]); }
 
-            _currentCards[i] = Instantiate(_pages[_index].Cards[i].CardPrefab, _cardSpawnPoints[i]);
-            _currentCards[i].GetComponent<CardDisplay>().Data = _pages[_index].Cards[i];
-            _currentCards[i].transform.localScale = new Vector3(_scale, _scale, _scale);
+            _currentCards[i] = _pages[_index].Cards[i].SpawnCard(_cardSpawnPoints[i], _scale);
         }
 
         _refresh = false;

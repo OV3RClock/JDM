@@ -54,4 +54,12 @@ public class PassepasseSO : CardSO
     [Tooltip("Jeton")]
     [SerializeField] private bool _jeton;
     public bool Jeton { get => _jeton; }
+
+    public override GameObject SpawnCard(Transform spawnPoint, float scale)
+    {
+        GameObject _tmpGameObj = Instantiate(this.CardPrefab, spawnPoint);
+        _tmpGameObj.GetComponent<PassepasseDisplay>().Data = this;
+        _tmpGameObj.transform.localScale = new Vector3(scale, scale, scale);
+        return _tmpGameObj;
+    }
 }

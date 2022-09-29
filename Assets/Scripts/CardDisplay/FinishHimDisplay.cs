@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class FinishHimDisplay : CardDisplay
 {
-    public override object Data { set => _data = (FinishHimSO)value; }
-    private FinishHimSO _data;
+    public FinishHimSO Data;
 
     [SerializeField] private TMP_Text _cardNameText;
     [SerializeField] private TMP_Text _effectText;
@@ -20,17 +19,17 @@ public class FinishHimDisplay : CardDisplay
 
     void Start()
     {
-        if(_data == null) { return; }
+        if(Data == null) { return; }
 
-        _cardNameText.text = _data.CardName;
-        _effectText.text = _data.Effect;
-        _rarityImage.sprite = _data.Rarity;
-        _rubyRarityImage.sprite = _data.RubyRarity;
+        _cardNameText.text = Data.CardName;
+        _effectText.text = Data.Effect;
+        _rarityImage.sprite = Data.Rarity;
+        _rubyRarityImage.sprite = Data.RubyRarity;
 
-        _artwork.sprite = _data.Artwork;
+        _artwork.sprite = Data.Artwork;
         
-        _rubyText.text = _data.RubyCost.ToString();
+        _rubyText.text = Data.RubyCost.ToString();
 
-        _extensionLogo.sprite = _data.Extension;
+        _extensionLogo.sprite = Data.Extension;
     }
 }

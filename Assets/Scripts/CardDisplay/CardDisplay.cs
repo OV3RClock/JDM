@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CardDisplay : MonoBehaviour
 {
-    public virtual object Data { get; set; }
+
 }
