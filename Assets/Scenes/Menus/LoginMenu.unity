@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 317461100}
   - component: {fileID: 317461102}
   - component: {fileID: 317461101}
+  - component: {fileID: 317461103}
   m_Layer: 0
   m_Name: Authentication Manager
   m_TagString: Untagged
@@ -496,6 +497,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bc38094cec47d45bd35e83968a6a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &317461103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317461099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33100f3b8cfef0f4c9fd5827836a81a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _discordData: {fileID: 11400000, guid: 45c64e3109f4c5e4aa6ed46be6220e15, type: 2}
 --- !u!1 &378908579
 GameObject:
   m_ObjectHideFlags: 0
