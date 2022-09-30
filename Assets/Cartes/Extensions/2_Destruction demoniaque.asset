@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a94da2ead65ed84b955207a9164c473, type: 3}
-  m_Name: Dragons
+  m_Name: 2_Destruction demoniaque
   m_EditorClassIdentifier: 
-  _extensionName: Dragons
-  _description: 
+  _extensionName: "Destruction d\xE9moniaque"
+  _description: "\"CardName\" et \"CardName\" font leur apparition dans Destruction
+    D\xE9moniaque, accompagn\xE9s d'un tas d'autres cartes exclusives !"
   _packCost: 100
-  _extensionIcon: {fileID: 21300000, guid: 4bfa76aa91d420c4682eaab083d532ea, type: 3}
+  _extensionIcon: {fileID: 21300000, guid: 0e06904e0049cb042960c5a33933df90, type: 3}
   _titleArtwork: {fileID: 0}
+  _iconCardList: []
+  _extensionCardList: []

@@ -48,3 +48,10 @@ MonoBehaviour:
     volume: 0.2
     loop: 0
     source: {fileID: 0}
+  - name: click
+    clip: {fileID: 8300000, guid: 98bda9f6821f1ed49a47b898115d1e02, type: 3}
+    volume: 0.5
+    loop: 0
+    source: {fileID: 0}
+  _currentSounds:
+  - market

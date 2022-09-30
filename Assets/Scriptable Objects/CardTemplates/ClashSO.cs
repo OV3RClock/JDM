@@ -5,45 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Nouveau Clash", menuName = "Carte/Carte Clash")]
 public class ClashSO : CardSO
 {
-    [Header("Informations generales")]
+    [Header("Attribut(s) spécifique(s) au type de carte")]
 
-    [Tooltip("Texte de la carte")]
-    [SerializeField] private string _clashText;
+    [Tooltip("Punchline du clash")]
+    [SerializeField, TextArea(1, 40)] private string _clashText;
     public string ClashText { get => _clashText; }
-
-    [Tooltip("Effet de la carte")]
-    [SerializeField] private string _effect;
-    public string Effect { get => _effect; }
-
-    [Tooltip("Gemme de rarete")]
-    [SerializeField] private Sprite _rarity;
-    public Sprite Rarity { get => _rarity; }
-
-    [Tooltip("Rubis de rarete")]
-    [SerializeField] private Sprite _rubyRarity;
-    public Sprite RubyRarity { get => _rubyRarity; }
-
-    [Header("Effet sonore")]
-
-    [Tooltip("Son emit lorsque jouee")]
-    [SerializeField] private string _sfx;
-    public string Sfx { get => _sfx; }
-
-    [Header("Statistiques")]
-
-    [Tooltip("Cout en rubis")]
-    [SerializeField] private int _rubyCost;
-    public int RubyCost { get => _rubyCost; }
-
-    [Header("Informations autres")]
-
-    [Tooltip("Archetype de la carte")]
-    [SerializeField] private string _archetype;
-    public string Archetype { get => _archetype; }
-
-    [Tooltip("Extension de la carte")]
-    [SerializeField] private Sprite _extension;
-    public Sprite Extension { get => _extension; }
 
     public override GameObject SpawnCard(Transform spawnPoint, float scale)
     {

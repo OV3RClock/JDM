@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardPrefab: {fileID: 5024310851297695992, guid: 6312005703bb4564585368bd3eb16d6b,
     type: 3}
-  _cardName: GLBSTKF
-  _effect: 
-  _rarity: {fileID: 21300000, guid: 7d7ff60fd1eb2ca4db653d0bd2f08681, type: 3}
-  _rubyRarity: {fileID: 21300000, guid: 688a913cd72d1ca40bddf2ae1cc23e0d, type: 3}
   _artwork: {fileID: 21300000, guid: 11a41c2b74f5aee46b11c38076710081, type: 3}
-  _sfx: 1_GLBSTKF
+  _sfx: 1
+  _cardName: GLBSTKF
   _rubyCost: 2
+  _effect: 
+  _rarityGem: {fileID: 21300000, guid: 7d7ff60fd1eb2ca4db653d0bd2f08681, type: 3}
+  _rubyRarity: {fileID: 21300000, guid: 688a913cd72d1ca40bddf2ae1cc23e0d, type: 3}
+  _archetype: 0
+  _extension: {fileID: 21300000, guid: 715148c729e2a9e469e37fa275617bfb, type: 3}
+  _lore: 
+  _jeton: 0
   _stc: 3
   _res: 0
-  _archetype: 
-  _extension: {fileID: 21300000, guid: 715148c729e2a9e469e37fa275617bfb, type: 3}
-  _jeton: 0

@@ -25,7 +25,7 @@ public class AccrocheDisplay : CardDisplay
 
         _cardNameText.text = Data.CardName;
         _effectText.text = Data.Effect;
-        _rarityImage.sprite = Data.Rarity;
+        _rarityImage.sprite = Data.RarityGem;
         _rubyRarityImage.sprite = Data.RubyRarity;
 
         _artwork.sprite = Data.Artwork;

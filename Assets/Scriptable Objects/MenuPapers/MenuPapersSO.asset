@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _kop1s:
   - {fileID: 11400000, guid: a9ff7482d87729e48903f92b8569d993, type: 2}
+  - {fileID: 11400000, guid: 124fdf088bfd20244b071794f412bc40, type: 2}
   _descriptions:
   - GOLEM
   - "Pour la luumi\xE8re !"

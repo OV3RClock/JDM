@@ -11,7 +11,7 @@ public class ExtensionSO : ScriptableObject
     [SerializeField] private string _extensionName;
     public string ExtensionName { get => _extensionName; }
 
-    [SerializeField] private string _description;
+    [SerializeField, TextArea(1, 30)] private string _description;
     public string Description { get => _description; }
 
     [SerializeField] private int _packCost;
@@ -24,4 +24,14 @@ public class ExtensionSO : ScriptableObject
 
     [SerializeField] private Sprite _titleArtwork;
     public Sprite TitleArtwork { get => _titleArtwork; }
+
+    [Header("Liste des 3 cartes iconiques")]
+
+    [SerializeField] private CardSO[] _iconCardList;
+    public CardSO[] IconCardList { get => _iconCardList; }
+
+    [Header("Liste complète des cartes")]
+
+    [SerializeField] private CardSO[] _extensionCardList;
+    public CardSO[] ExtensionCardList { get => _extensionCardList; }
 }

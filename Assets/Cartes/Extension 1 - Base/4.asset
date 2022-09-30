@@ -9,19 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5cd78845128084d96df0181038bc36, type: 3}
-  m_Name: 2
+  m_Script: {fileID: 11500000, guid: 442dc20a7744bb04f92b08773045e868, type: 3}
+  m_Name: 4
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 5024310851297695992, guid: c035dce07fbf45a4c8d826a0ba0f7c06,
+  _cardPrefab: {fileID: 5024310851297695992, guid: 4e2392f8c6d72f54d9dbd169dcf8156f,
     type: 3}
-  _artwork: {fileID: 21300000, guid: ba66a69402a66d8409658542f2d7e32a, type: 3}
-  _sfx: 2
-  _cardName: "Salut, comment \xE7a va ?"
+  _artwork: {fileID: 21300000, guid: 52491513ad0a6f04ca0c5690ab77f52b, type: 3}
+  _sfx: 4
+  _cardName: Moi
   _rubyCost: 1
-  _effect: -1 STC pour votre adversaire
+  _effect: +1 STC
   _rarityGem: {fileID: 21300000, guid: c45932c33501ea140a854306f97b4fd3, type: 3}
   _rubyRarity: {fileID: 21300000, guid: 688a913cd72d1ca40bddf2ae1cc23e0d, type: 3}
   _archetype: 0
   _extension: {fileID: 21300000, guid: 715148c729e2a9e469e37fa275617bfb, type: 3}
   _lore: 
   _jeton: 0
+  _spellRubyCost: 2

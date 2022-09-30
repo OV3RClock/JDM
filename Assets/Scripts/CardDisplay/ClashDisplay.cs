@@ -13,7 +13,7 @@ public class ClashDisplay : CardDisplay
 
     [SerializeField] private TMP_Text _rubyText;
 
-    [SerializeField] private TMP_Text _achetypeText;
+    [SerializeField] private TMP_Text _archetypeText;
     [SerializeField] private Image _extensionLogo;
 
     void Start()
@@ -25,7 +25,9 @@ public class ClashDisplay : CardDisplay
 
         _rubyText.text = Data.RubyCost.ToString();
 
-        _achetypeText.text = Data.Archetype;
+        _archetypeText.text = Data.Archetype.ToString();
+        if (Data.Archetype == Archetype.TAMERE) { _archetypeText.text = "TA MERE"; }
+        if (Data.Archetype == Archetype.NONE) { _archetypeText.text = ""; }
         _extensionLogo.sprite = Data.Extension;
     }
 }
