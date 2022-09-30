@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: SceneLoaderSO
   m_EditorClassIdentifier: 
   _sceneGroups:
-  - name: MainMenu
+  - name: LoginMenu
     scenesToLoad:
     - SceneBootstrap
+    - Transition
+    - Audio
+    - Camera
+    - LoginMenu
+  - name: MainMenu
+    scenesToLoad:
     - Transition
     - Audio
     - Camera
