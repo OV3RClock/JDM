@@ -15,7 +15,7 @@ MonoBehaviour:
   _sceneGroups:
   - name: LoginMenu
     scenesToLoad:
-    - SceneBootstrap
+    - _SceneBootstrap
     - Discord
     - Transition
     - Audio
