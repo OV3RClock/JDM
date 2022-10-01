@@ -12,8 +12,6 @@ public class DiscordDataSO : ScriptableObject
     [SerializeField] private long _appClientID;
     public long AppClientID { get => _appClientID; set => _appClientID = value; }
 
-    [SerializeField] private Sprite _stcIcon;
-
     private Discord.Discord _instance;
 	public Discord.Discord Instance { get => _instance; set => _instance = value; }
 
@@ -31,6 +29,18 @@ public class DiscordDataSO : ScriptableObject
     [HideInInspector]
     public Sprite _userSprite;
     public Sprite UserSprite { get => _userSprite; set => _userSprite = value; }
+
+    #endregion
+
+    #region RichPresence
+
+    private string _state = "En jeu";
+    public string State { get => _state; set => _state = value; }
+
+    private string _details = "Dans la street";
+    public string Details { get => _details; set => _details = value; }
+    
+    private string _largeImage = "stc";
 
     #endregion
 
@@ -52,7 +62,7 @@ public class DiscordDataSO : ScriptableObject
 
         _userSprite = LoadUserSprite("userSprite");
 
-        //SetRichPresence();
+        SetRichPresence();
 
         GetOauth2Token();
     }
@@ -129,13 +139,14 @@ public class DiscordDataSO : ScriptableObject
         Discord.ActivityManager activityManager = _instance.GetActivityManager();
         Discord.Activity activity = new Discord.Activity
         {
-            State = "Still Testing",
-            Details = "Bigger Test"
+            State = _state,
+            Details = _details,
+            Assets = { LargeImage = _largeImage }
         };
 
         activityManager.UpdateActivity(activity, (res) =>
         {
-            if (res == Discord.Result.Ok) { Debug.Log("Discord RP updated sucessfully"); }
+            if (res != Discord.Result.Ok) { Debug.LogWarning("Discord RichPresence update failed !"); }
         });
     }
 
@@ -145,7 +156,7 @@ public class DiscordDataSO : ScriptableObject
         {
             if (result == Discord.Result.Ok)
             {
-                //Debug.Log(token.AccessToken);
+                // Debug.Log(token.AccessToken);
                 
                 // You may now use this token against Discord's HTTP API
             }

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DiscordDataSO
   m_EditorClassIdentifier: 
   _appClientID: 1025427460399042580
+  _userSprite: {fileID: 0}
