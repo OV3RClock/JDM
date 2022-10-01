@@ -12,7 +12,8 @@ public class DiscordUserDisplay : MonoBehaviour
 
     private void Start()
     {
+        if(_discordData == null) { return; }
         _usernameText.text = _discordData.UserName;
-        _image.sprite = _discordData.UserAvatar;
+        _image.sprite = _discordData.UserSprite;
     }
 }

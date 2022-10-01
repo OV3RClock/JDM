@@ -14,6 +14,7 @@ public class DiscordController : MonoBehaviour
 
 	private void Update()
 	{
+		if (_discordData.UserSprite == null) { _discordData.GetCurrentUserSprite(); }
 		_discordData.Instance.RunCallbacks();
 	}
 }

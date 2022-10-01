@@ -27,8 +27,8 @@ public class DiscordDataSO : ScriptableObject
     public long UserId { get => _userId; }
 
     [HideInInspector]
-    public Sprite _userAvatar;
-    public Sprite UserAvatar { get => _userAvatar; }
+    public Sprite _userSprite;
+    public Sprite UserSprite { get => _userSprite; }
 
     #endregion
 
@@ -38,10 +38,13 @@ public class DiscordDataSO : ScriptableObject
 
     public void Init()
     {
+        _userName = null;
+        _userDiscriminator = null;
+        _userId = -1;
+        _userSprite = null;
+
         SetInstance();
         GetCurrentUser();
-        GetCurrentUserAvatar();
-        //SetRichPresence();
     }
 
     private void SetInstance()
@@ -61,7 +64,7 @@ public class DiscordDataSO : ScriptableObject
         };
     }
 
-    public void GetCurrentUserAvatar()
+    public void GetCurrentUserSprite()
     {
         var imageManager = _instance.GetImageManager();
         var handle = new Discord.ImageHandle()
@@ -75,7 +78,7 @@ public class DiscordDataSO : ScriptableObject
             if (result == Discord.Result.Ok)
             {
                 var texture = imageManager.GetTexture(handle);
-                _userAvatar = Sprite.Create(texture, new Rect(0, 0, texture.width, -texture.height), new Vector2(0.5f,0.5f));
+                _userSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, -texture.height), new Vector2(0.5f,0.5f));
             }
         });
     }
