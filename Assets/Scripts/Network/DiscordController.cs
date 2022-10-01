@@ -14,7 +14,12 @@ public class DiscordController : MonoBehaviour
 
 	private void Update()
 	{
-		if (_discordData.UserSprite == null) { _discordData.GetCurrentUserSprite(); }
+		if (_discordData.UserSprite == null)
+		{ 
+			_discordData.SaveUserSprite();
+			_discordData.UserSprite = _discordData.LoadUserSprite("userSprite");
+		}
+		
 		_discordData.Instance.RunCallbacks();
 	}
 }

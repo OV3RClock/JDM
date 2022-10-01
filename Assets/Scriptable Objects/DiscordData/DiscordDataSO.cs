@@ -12,6 +12,8 @@ public class DiscordDataSO : ScriptableObject
     [SerializeField] private long _appClientID;
     public long AppClientID { get => _appClientID; set => _appClientID = value; }
 
+    [SerializeField] private Sprite _stcIcon;
+
     private Discord.Discord _instance;
 	public Discord.Discord Instance { get => _instance; set => _instance = value; }
 
@@ -28,7 +30,7 @@ public class DiscordDataSO : ScriptableObject
 
     [HideInInspector]
     public Sprite _userSprite;
-    public Sprite UserSprite { get => _userSprite; }
+    public Sprite UserSprite { get => _userSprite; set => _userSprite = value; }
 
     #endregion
 
@@ -38,13 +40,21 @@ public class DiscordDataSO : ScriptableObject
 
     public void Init()
     {
-        _userName = null;
-        _userDiscriminator = null;
-        _userId = -1;
-        _userSprite = null;
-
         SetInstance();
-        GetCurrentUser();
+
+        if (!PlayerPrefs.HasKey("userName")) { SaveUserInfo(); }
+
+        _userName = PlayerPrefs.GetString("userName");
+        _userDiscriminator = PlayerPrefs.GetString("userDiscriminator");
+        _userId = PlayerPrefs.GetInt("userId");
+
+        if (!PlayerPrefs.HasKey("userSprite")) { SaveUserSprite(); }
+
+        _userSprite = LoadUserSprite("userSprite");
+
+        //SetRichPresence();
+
+        GetOauth2Token();
     }
 
     private void SetInstance()
@@ -52,19 +62,26 @@ public class DiscordDataSO : ScriptableObject
         _instance = new Discord.Discord(_appClientID, (System.UInt64)Discord.CreateFlags.Default);
     }
 
-    public void GetCurrentUser()
+    public void SaveUserInfo()
     {
         var userManager = _instance.GetUserManager();
         userManager.OnCurrentUserUpdate += () => {
             var currentUser = userManager.GetCurrentUser();
 
             _userName = currentUser.Username;
+            PlayerPrefs.SetString("userName", _userName);
+
             _userDiscriminator = currentUser.Discriminator;
+            PlayerPrefs.SetString("userDiscriminator", _userDiscriminator);
+
             _userId = currentUser.Id;
+            PlayerPrefs.SetInt("userId", (int)_userId);
+
+            PlayerPrefs.Save();
         };
     }
 
-    public void GetCurrentUserSprite()
+    public void SaveUserSprite()
     {
         var imageManager = _instance.GetImageManager();
         var handle = new Discord.ImageHandle()
@@ -77,15 +94,38 @@ public class DiscordDataSO : ScriptableObject
         {
             if (result == Discord.Result.Ok)
             {
-                var texture = imageManager.GetTexture(handle);
-                _userSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, -texture.height), new Vector2(0.5f,0.5f));
+                Texture2D texture = imageManager.GetTexture(handle);
+                byte[] data = texture.EncodeToPNG();
+                string base64Tex = System.Convert.ToBase64String(data);
+
+                if(base64Tex != null)
+                {
+                    PlayerPrefs.SetString("userSprite", base64Tex);
+                    PlayerPrefs.Save();
+                }
             }
         });
     }
 
+    public Sprite LoadUserSprite(string variable)
+    {
+        string base64Tex = PlayerPrefs.GetString(variable);
+
+        if (!string.IsNullOrEmpty(base64Tex))
+        {
+            byte[] texByte = System.Convert.FromBase64String(base64Tex);
+            Texture2D tex = new Texture2D(2,2);
+
+            if (tex.LoadImage(texByte))
+            {
+                return Sprite.Create(tex, new Rect(0, 0, tex.width, -tex.height), new Vector2(0.5f, 0.5f));
+            }
+        }
+        return null;
+    }
+
     public void SetRichPresence()
     {
-        if (_instance == null) { Debug.Log("Instance null"); return; }
         Discord.ActivityManager activityManager = _instance.GetActivityManager();
         Discord.Activity activity = new Discord.Activity
         {
@@ -99,6 +139,18 @@ public class DiscordDataSO : ScriptableObject
         });
     }
 
+    public void GetOauth2Token()
+    {
+        _instance.GetApplicationManager().GetOAuth2Token((Discord.Result result, ref Discord.OAuth2Token token) =>
+        {
+            if (result == Discord.Result.Ok)
+            {
+                //Debug.Log(token.AccessToken);
+                
+                // You may now use this token against Discord's HTTP API
+            }
+        });
+    }
 
     #endregion
 }
