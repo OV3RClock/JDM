@@ -7,13 +7,13 @@ public class InitSound : MonoBehaviour
     [SerializeField] private AudioSO _audio;
     [SerializeField] private string[] _soundsToPlay;
 
-    void Start()
+    private void Start()
     {
         _audio.StopAllExcept(_soundsToPlay);
 
-        for(int i = 0; i < _soundsToPlay.Length; i++)
+        foreach (var soundToPlay in _soundsToPlay)
         {
-            if (!_audio.IsPlaying(_soundsToPlay[i])) { _audio.Play(_soundsToPlay[i]); }
+            if (!_audio.IsPlaying(soundToPlay)) { _audio.Play(soundToPlay); }
         }
     }
 }

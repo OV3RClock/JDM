@@ -7,94 +7,89 @@ using UnityEngine;
 public class AudioSO : ScriptableObject
 {
     public List<Sound> sounds;
-
-    public List<string> _currentSounds = new();
+    public List<string> currentSounds = new();
 
     public void Play(string soundName)
     {
-        Sound sound = sounds.Find(sound => sound.name == soundName);
-        if (sound == null)
+        var sound = sounds.Find(sound => sound.name == soundName);
+        if (sound != null)
         {
-            Debug.LogWarning("Son : " + soundName + " non trouvé !");
-        }
-        else
-        {
-            _currentSounds.Add(sound.name);
+            currentSounds.Add(sound.name);
             sound.source.Play();
         }
+#if UNITY_EDITOR
+        else
+        {
+            Debug.LogWarning("Son : " + soundName + " not found!");
+        }
+#endif
     }
 
     public void PlaySFX(string soundName)
     {
-        Sound sound = sounds.Find(sound => sound.name == soundName);
-        if (sound == null)
-        {
-            Debug.LogWarning("SFX : " + soundName + " non trouvé !");
-        }
-        else
+        var sound = sounds.Find(sound => sound.name == soundName);
+        if (sound != null)
         {
             sound.source.Play();
         }
+#if UNITY_EDITOR
+        else
+        {
+            Debug.LogWarning("SFX : " + soundName + " not found!");
+        }
+#endif
     }
 
     public void Stop(string soundName)
     {
-        Sound sound = sounds.Find(sound => sound.name == soundName);
-        if (sound == null)
+        var sound = sounds.Find(sound => sound.name == soundName);
+        if (sound != null && currentSounds.Contains(sound.name))
         {
-            Debug.LogWarning("Son : " + soundName + " non trouvé !");
+            currentSounds.Remove(sound.name);
+            sound.source.Stop();
         }
-        else if (!_currentSounds.Contains(sound.name))
+#if UNITY_EDITOR
+        else if (sound == null)
         {
-            Debug.LogWarning("Son " + soundName + " n'est pas en cours de lecture !");
+            Debug.LogWarning("Son : " + soundName + " not found!");
         }
         else
         {
-            _currentSounds.Remove(sound.name);
-            sound.source.Stop();
+            Debug.LogWarning("Son " + soundName + " is not playing!");
         }
+#endif
     }
 
     public void StopAll()
     {
-        if (_currentSounds.Count == 0) { return; }
+        if (currentSounds.Count == 0) { return; }
 
-        for(int i = 0; i < _currentSounds.Count; i++)
+        foreach (var sound in currentSounds.Select(currentSound => sounds.Find(sound => sound.name == currentSound)))
         {
-            Sound sound = sounds.Find(sound => sound.name == _currentSounds[i]);
             sound.source.Stop();
         }
-        _currentSounds.Clear();
+        currentSounds.Clear();
     }
 
     public void StopAllExcept(string[] songsToPlay)
     {
-        if (_currentSounds.Count == 0) { return; }
+        if (currentSounds.Count == 0) { return; }
 
-        //On isole les musiques a arreter
-        List<string> songsToStop = new();
-        for (int i = 0; i < _currentSounds.Count; i++)
-        {
-            if (!songsToPlay.Contains(_currentSounds[i]))
-            {
-                songsToStop.Add(_currentSounds[i]);
-            }
-        }
+        // Take apart all musics to stop
+        var songsToStop = currentSounds.Where(currentSound => !songsToPlay.Contains(currentSound)).ToList();
 
-        //On arrete les musiques
-        for (int i = 0; i < songsToStop.Count; i++)
+        // Stop all musics
+        foreach (var songToStop in songsToStop)
         {
-            Sound sound = sounds.Find(sound => sound.name == songsToStop[i]);
+            var sound = sounds.Find(sound => sound.name == songToStop);
             sound.source.Stop();
-            _currentSounds.Remove(songsToStop[i]);
+            currentSounds.Remove(songToStop);
         }
     }
 
     public bool IsPlaying(string soundName)
     {
-        if (_currentSounds.Count == 0) { return false; }
-
-        return _currentSounds.Contains(soundName);
+        return currentSounds.Count != 0 && currentSounds.Contains(soundName);
     }
 }
 

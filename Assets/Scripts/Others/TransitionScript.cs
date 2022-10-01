@@ -9,6 +9,8 @@ public class TransitionScript : MonoBehaviour
     [SerializeField] SceneLoaderSO _sceneLoaderSO;
     private Animator _animator;
 
+    private static readonly int Start1 = Animator.StringToHash("Start");
+
     private void Start()
     {
         _animator = gameObject.GetComponent<Animator>();
@@ -25,7 +27,7 @@ public class TransitionScript : MonoBehaviour
 
     private IEnumerator Transition()
     {
-        _animator.SetTrigger("Start");
+        _animator.SetTrigger(Start1);
         yield return new WaitForSeconds(0.5f);
         _sceneLoaderSO.LoadSceneGroup(_transitionSO.SceneGroupToLoad);
     }

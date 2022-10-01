@@ -14,6 +14,5 @@ public class SceneBootstrap : MonoBehaviour
         {
             _mixer.SetFloat("volume", Mathf.Log10(PlayerPrefs.GetFloat("volume")) * 20);
         }
-        
     }
 }

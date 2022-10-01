@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class AudioLoader : MonoBehaviour
 {
-    [SerializeField] private AudioSO audioLoader;
+    [SerializeField] private AudioSO _audioLoader;
     public AudioMixerGroup _audioMixer;
 
     public void Awake()
@@ -13,15 +11,15 @@ public class AudioLoader : MonoBehaviour
         Init();
     }
 
-    public void Init()
+    private void Init()
     {
-        foreach (Sound s in audioLoader.sounds)
+        foreach (var sound in _audioLoader.sounds)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.loop = s.loop;
-            s.source.outputAudioMixerGroup = _audioMixer;
+            sound.source = gameObject.AddComponent<AudioSource>();
+            sound.source.clip = sound.clip;
+            sound.source.volume = sound.volume;
+            sound.source.loop = sound.loop;
+            sound.source.outputAudioMixerGroup = _audioMixer;
         }
     }
 }
