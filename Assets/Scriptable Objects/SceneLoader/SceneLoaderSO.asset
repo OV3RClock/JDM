@@ -16,50 +16,50 @@ MonoBehaviour:
   - name: LoginMenu
     scenesToLoad:
     - _SceneBootstrap
-    - Discord
     - Transition
+    - Discord
     - Audio
     - Camera
     - LoginMenu
   - name: MainMenu
     scenesToLoad:
-    - Discord
     - Transition
+    - Discord
     - Audio
     - Camera
     - MainMenu
   - name: OptionsMenu
     scenesToLoad:
-    - Discord
     - Transition
+    - Discord
     - Audio
     - Camera
     - OptionsMenu
   - name: ShopMenu
     scenesToLoad:
-    - Discord
     - Transition
+    - Discord
     - Audio
     - Camera
     - ShopMenu
   - name: AppleJuiceMenu
     scenesToLoad:
-    - Discord
     - Transition
+    - Discord
     - Audio
     - Camera
     - AppleJuiceMenu
   - name: PlayMenu
     scenesToLoad:
-    - Discord
     - Transition
+    - Discord
     - Audio
     - Camera
     - PlayMenu
   - name: CardsMenu
     scenesToLoad:
-    - Discord
     - Transition
+    - Discord
     - Audio
     - Camera
     - CardsMenu

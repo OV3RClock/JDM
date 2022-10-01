@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName ="Others/NetworkDataSO")]
+[CreateAssetMenu(menuName ="Others/DiscordDataSO")]
 public class DiscordDataSO : ScriptableObject
 {
     #region Variables
 
     [SerializeField] private long _appClientID;
-    public long AppClientID { get => _appClientID; set => _appClientID = value; }
+    public long AppClientID { get => _appClientID; }
 
     private Discord.Discord _instance;
-	public Discord.Discord Instance { get => _instance; set => _instance = value; }
+	public Discord.Discord Instance { get => _instance; }
 
     #region UserData
 
@@ -44,6 +44,8 @@ public class DiscordDataSO : ScriptableObject
 
     #endregion
 
+    public bool Refresh = false;
+
     #endregion
 
     #region Functions
@@ -61,7 +63,7 @@ public class DiscordDataSO : ScriptableObject
         if (!PlayerPrefs.HasKey("userSprite")) { SaveUserSprite(); }
 
         _userSprite = LoadUserSprite("userSprite");
-
+        
         SetRichPresence();
 
         GetOauth2Token();
@@ -112,6 +114,7 @@ public class DiscordDataSO : ScriptableObject
                 {
                     PlayerPrefs.SetString("userSprite", base64Tex);
                     PlayerPrefs.Save();
+                    Refresh = true;
                 }
             }
         });
@@ -161,6 +164,16 @@ public class DiscordDataSO : ScriptableObject
                 // You may now use this token against Discord's HTTP API
             }
         });
+    }
+
+    public void ResetInfos()
+    {
+        _userName = null;
+        _userDiscriminator = null;
+        _userSprite = null;
+
+        SaveUserInfo();
+        _userName = PlayerPrefs.GetString("userName");
     }
 
     #endregion
