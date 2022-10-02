@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,28 +45,22 @@ public class DiscordDataSO : ScriptableObject
 
     #endregion
 
-    public bool Refresh = false;
-
     #endregion
 
     #region Functions
 
-    public void Init()
+    public async void Init()
     {
         SetInstance();
 
-        if (!PlayerPrefs.HasKey("userName")) { SaveUserInfo(); }
+        await SaveUserInfo();
 
-        _userName = PlayerPrefs.GetString("userName");
-        _userDiscriminator = PlayerPrefs.GetString("userDiscriminator");
-        _userId = PlayerPrefs.GetInt("userId");
+        await SaveUserSpriteToDisk();
 
-        if (!PlayerPrefs.HasKey("userSprite")) { SaveUserSprite(); }
-
-        _userSprite = LoadUserSprite("userSprite");
+        _userSprite = LoadUserSpriteFromDisk("userSprite");
         
         SetRichPresence();
-
+        
         GetOauth2Token();
     }
 
@@ -74,53 +69,67 @@ public class DiscordDataSO : ScriptableObject
         _instance = new Discord.Discord(_appClientID, (System.UInt64)Discord.CreateFlags.Default);
     }
 
-    public void SaveUserInfo()
+    private Task SaveUserInfo()
     {
+        var completion = new TaskCompletionSource<bool>();
+
         var userManager = _instance.GetUserManager();
-        userManager.OnCurrentUserUpdate += () => {
-            var currentUser = userManager.GetCurrentUser();
+        try
+        {
+            userManager.OnCurrentUserUpdate += () => {
 
-            _userName = currentUser.Username;
-            PlayerPrefs.SetString("userName", _userName);
+                var currentUser = userManager.GetCurrentUser();
 
-            _userDiscriminator = currentUser.Discriminator;
-            PlayerPrefs.SetString("userDiscriminator", _userDiscriminator);
+                _userId = currentUser.Id;
+                _userName = currentUser.Username;
+                _userDiscriminator = currentUser.Discriminator;
 
-            _userId = currentUser.Id;
-            PlayerPrefs.SetInt("userId", (int)_userId);
-
-            PlayerPrefs.Save();
-        };
+                completion.SetResult(true);
+            };
+        }
+        catch (Exception ex)
+        {
+            completion.SetException(ex);
+        }
+        return completion.Task;
     }
 
-    public void SaveUserSprite()
+    private Task SaveUserSpriteToDisk()
     {
+        var completion = new TaskCompletionSource<bool>();
+
         var imageManager = _instance.GetImageManager();
         var handle = new Discord.ImageHandle()
         {
             Id = _userId,
             Size = 1024
         };
-
-        imageManager.Fetch(handle, false, (result, handle) =>
+        try
         {
-            if (result == Discord.Result.Ok)
+            imageManager.Fetch(handle, false, (result, handle) =>
             {
-                Texture2D texture = imageManager.GetTexture(handle);
-                byte[] data = texture.EncodeToPNG();
-                string base64Tex = System.Convert.ToBase64String(data);
-
-                if(base64Tex != null)
+                Debug.Log("Inside fetch" + result);
+                if (result == Discord.Result.Ok)
                 {
+                    Texture2D texture = imageManager.GetTexture(handle);
+                    byte[] data = texture.EncodeToPNG();
+                    string base64Tex = System.Convert.ToBase64String(data);
+
                     PlayerPrefs.SetString("userSprite", base64Tex);
                     PlayerPrefs.Save();
-                    Refresh = true;
+
+                    completion.SetResult(true);
                 }
-            }
-        });
+            });
+        }
+        catch(Exception ex)
+        {
+            completion.SetException(ex);
+        }
+        return completion.Task;
     }
 
-    public Sprite LoadUserSprite(string variable)
+    public Sprite LoadUserSpriteFromDisk(string variable)
     {
         string base64Tex = PlayerPrefs.GetString(variable);
 
@@ -153,7 +162,7 @@ public class DiscordDataSO : ScriptableObject
         });
     }
 
-    public void GetOauth2Token()
+    private void GetOauth2Token()
     {
         _instance.GetApplicationManager().GetOAuth2Token((Discord.Result result, ref Discord.OAuth2Token token) =>
         {
@@ -164,16 +173,6 @@ public class DiscordDataSO : ScriptableObject
                 // You may now use this token against Discord's HTTP API
             }
         });
-    }
-
-    public void ResetInfos()
-    {
-        _userName = null;
-        _userDiscriminator = null;
-        _userSprite = null;
-
-        SaveUserInfo();
-        _userName = PlayerPrefs.GetString("userName");
     }
 
     #endregion
