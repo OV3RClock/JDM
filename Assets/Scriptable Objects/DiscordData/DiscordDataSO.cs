@@ -57,7 +57,7 @@ public class DiscordDataSO : ScriptableObject
 
         await SaveUserSpriteToDisk();
 
-        _userSprite = LoadUserSpriteFromDisk("userSprite");
+        LoadUserSpriteFromDisk("userSprite");
         
         SetRichPresence();
         
@@ -108,7 +108,6 @@ public class DiscordDataSO : ScriptableObject
         {
             imageManager.Fetch(handle, false, (result, handle) =>
             {
-                Debug.Log("Inside fetch" + result);
                 if (result == Discord.Result.Ok)
                 {
                     Texture2D texture = imageManager.GetTexture(handle);
@@ -129,7 +128,7 @@ public class DiscordDataSO : ScriptableObject
         return completion.Task;
     }
 
-    public Sprite LoadUserSpriteFromDisk(string variable)
+    public void LoadUserSpriteFromDisk(string variable)
     {
         string base64Tex = PlayerPrefs.GetString(variable);
 
@@ -140,10 +139,9 @@ public class DiscordDataSO : ScriptableObject
 
             if (tex.LoadImage(texByte))
             {
-                return Sprite.Create(tex, new Rect(0, 0, tex.width, -tex.height), new Vector2(0.5f, 0.5f));
+                _userSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, -tex.height), new Vector2(0.5f, 0.5f));
             }
         }
-        return null;
     }
 
     public void SetRichPresence()

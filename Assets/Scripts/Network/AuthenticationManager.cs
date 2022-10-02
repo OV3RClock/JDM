@@ -11,6 +11,7 @@ public class AuthenticationManager : MonoBehaviour
         Debug.Log("Signing On...");
 
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
         playerId = AuthenticationService.Instance.PlayerId;
 
         Debug.Log("AuthenticationManager : playerId : " + playerId);

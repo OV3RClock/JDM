@@ -12,54 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5a768a310582b44b74d9e378f5eaec, type: 3}
   m_Name: SceneLoaderSO
   m_EditorClassIdentifier: 
+  alwaysLoaded:
+    name: Base
+    scenesToLoad:
+    - Transition
+    - Camera
+    - Audio
+    - Discord
   sceneGroups:
   - name: LoginMenu
     scenesToLoad:
     - _SceneBootstrap
-    - Transition
-    - Camera
-    - Audio
-    - Discord
     - LoginMenu
   - name: AppleJuiceMenu
     scenesToLoad:
-    - Transition
-    - Camera
-    - Audio
-    - Discord
     - AppleJuiceMenu
   - name: CardsMenu
     scenesToLoad:
-    - Transition
-    - Camera
-    - Audio
-    - Discord
     - CardsMenu
   - name: MainMenu
     scenesToLoad:
-    - Transition
-    - Camera
-    - Audio
-    - Discord
     - MainMenu
   - name: OptionsMenu
     scenesToLoad:
-    - Transition
-    - Camera
-    - Audio
-    - Discord
     - OptionsMenu
   - name: PlayMenu
     scenesToLoad:
-    - Transition
-    - Camera
-    - Audio
-    - Discord
     - PlayMenu
   - name: ShopMenu
     scenesToLoad:
-    - Transition
-    - Camera
-    - Audio
-    - Discord
     - ShopMenu
