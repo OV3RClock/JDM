@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Nouveau Personnage", menuName = "Carte/Carte Personnage")]
 public class PersonnageSO : CardSO
 {
+    [Header("Attribut(s) specifique(s) au type de carte")]
+
     [Tooltip("Cout du pouvoir en rubis")]
     [SerializeField] private int _spellRubyCost;
     public int SpellRubyCost { get => _spellRubyCost; }

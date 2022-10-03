@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Nouveau Kop1", menuName = "Carte/Carte Kop1")]
 public class Kop1SO : CardSO
 {
-    [Header("Attribut(s) spécifique(s) au type de carte")]
+    [Header("Attribut(s) specifique(s) au type de carte")]
 
     [Tooltip("Street Cred")]
     [SerializeField] private int _stc;

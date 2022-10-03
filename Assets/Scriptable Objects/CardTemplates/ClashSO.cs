@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Nouveau Clash", menuName = "Carte/Carte Clash")]
 public class ClashSO : CardSO
 {
-    [Header("Attribut(s) spécifique(s) au type de carte")]
+    [Header("Attribut(s) specifique(s) au type de carte")]
 
     [Tooltip("Punchline du clash")]
     [SerializeField, TextArea(1, 40)] private string _clashText;
