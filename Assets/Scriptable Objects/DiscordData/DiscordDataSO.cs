@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -166,8 +167,9 @@ public class DiscordDataSO : ScriptableObject
         {
             if (result == Discord.Result.Ok)
             {
-                // Debug.Log(token.AccessToken);
-                
+                Debug.Log(token.AccessToken);
+                Debug.Log(token.Expires);
+                Debug.Log(token.Scopes);
                 // You may now use this token against Discord's HTTP API
             }
         });

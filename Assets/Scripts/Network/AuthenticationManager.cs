@@ -10,10 +10,8 @@ public class AuthenticationManager : MonoBehaviour
     
     private string playerId = "Not signed in";
 
-
-    private string idProviderName = "";
     private string idToken = "";
-
+    private string idProviderName = "";
 
     public async void LoginButton()
     {
@@ -25,6 +23,7 @@ public class AuthenticationManager : MonoBehaviour
 
         Debug.Log("AuthenticationManager : playerId : " + playerId);
     }
+
 
     private async Task SignInWithOpenIdConnectAsync(string idProviderName, string idToken)
     {
